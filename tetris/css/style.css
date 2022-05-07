@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Gugi', cursive;
 }
 
 ul {
@@ -9,9 +10,12 @@ ul {
 
 
 body {
+    background: #000;
     height: 100%;
     overflow: hidden;
 }
+
+
 
 .game-text {
     display: none;
@@ -31,12 +35,33 @@ body {
 .game-text>button {
     padding: 0.5rem 1rem;
     color: #fff;
-    background: salmon;
+    background: #000;
     border: none;
     cursor: pointer;
 }
 
+.game-text>button:hover {
+    background: #f25c54;
+    color: #000;
+    box-shadow: 0 0 5px #f25c54,
+        0 0 25px #f25c54,
+        0 0 50px #f25c54,
+        0 0 200px #f25c54;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+a:nth-child(1) {
+    filter: hue-rotate(270deg);
+}
+
+a:nth-child(2) {
+    filter: hue-rotate(110deg);
+}
+
+
 .score {
+    color: #fff;
+    margin-top: 3rem;
     text-align: center;
     font-size: 36px;
     margin-bottom: 2rem;
@@ -60,30 +85,30 @@ body {
 .playground>ul>li>ul>li {
     width: 25px;
     height: 25px;
-    outline: 1px solid #ccc;
+    outline: 1px solid #fff;
 }
 
 .bar {
-    background: salmon;
+    background: #aed1e6;
 }
 
 .tree {
-    background: #67c23a;
+    background: #faf0ca;
     /* 정사각형 모양 */
 }
 
 .zee {
-    background: #e6a23c;
+    background: #f4d35e;
 }
 
 .elLeft {
-    background: #8e44ad;
+    background: #ee964b;
 }
 
 .elRight {
-    background: #16a085;
+    background: #f95738;
 }
 
 .square {
-    background: #ccc;
+    background: #b5c99a;
 }
