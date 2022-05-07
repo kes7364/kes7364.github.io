@@ -18,8 +18,8 @@ let allMusic = [
         src: 'player3',
     },
     {
-        name: 'J.park - Us2',
-        artist: 'Yultron x J.park',
+        name: 'Y&J.P - Us2',
+        artist: 'Yultron & J.PARK',
         img: 'player4',
         src: 'player4',
     },
