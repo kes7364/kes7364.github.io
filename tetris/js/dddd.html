@@ -1,0 +1,58 @@
+var resetCount = 180+45;
+var count = resetCount;
+var timerText = 0;
+var untilBack = 45;
+var counter;
+var downTime = untilBack;
+var warningTime = 5;
+var percentageCount = 0;
+var barWidth = 0;
+var barText = "";
+var audio = new Audio('http://xd-artist.de/323018_5541326-lq.mp3');
+
+$("#PoisonStartButton").click(function () {
+count = resetCount - untilBack;
+percentageCount = 1;
+clearInterval(counter);
+counter = setInterval(timer, 1000); //1000 will run it every 1 second
+$("#PoisonStartButton").hide();
+$("#PoisonResetButton").show();
+audio.play();
+
+$("#note").hide();
+});
+
+$("#PoisonResetButton").click(function () {
+count = resetCount;
+percentageCount = 0;
+barWidth = 0;
+downTime = untilBack;
+$("#bar").css("width", 0 +"%");
+clearInterval(counter);
+counter = setInterval(timer, 1000); //1000 will run it every 1 second
+$("#PoisonResetButton").hide();
+if ($("#poisonBoss").hasClass('warning')) {
+$("#poisonBoss").removeClass("warning");
+}
+audio.play();
+});
+
+
+function timer() {
+count = count - 1;
+barText = Math.round(((count*100)/(resetCount-untilBack))) + "%";
+
+//boss down
+if (count > (resetCount - untilBack)) {
+downTime = downTime - 1;
+$("#text").text("Back in")
+if( downTime < warningTime ) { $("#poisonBoss").addClass("warning"); audio.play(); } timerText=downTime; } //boss up else { barWidth=((percentageCount*100)/(resetCount-untilBack)); percentageCount=percentageCount + 1; if( downTime < warningTime && $("#poisonBoss").hasClass("warning") ) { $("#poisonBoss").removeClass("warning"); } $("#bar").css("width", barWidth +"%"); $("#barText").text(barText); timerText=count; $("#text").text("enrage in"); $("#PoisonResetButton").show(); } // ones if(count==90) { audio.play() } // twice if(count < 30 && count>=28 ) {
+    audio.play()
+    }
+    // three times
+    if(count < 15 && count>= 12) {
+        audio.play()
+        }
+
+
+        if (count < warningTime) { $("#poisonBoss").addClass("warning"); audio.play(); } var m=parseInt(timerText/60.0); var sec=timerText % 60; if(sec <10){ sec="0" +sec; } var t=m + ":" + sec ; $("#timer").text(t); if (count <=0) { clearInterval(counter); return; } }
